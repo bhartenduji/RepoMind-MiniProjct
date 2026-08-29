@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# Tests / caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Logs
+*.log
+
+# Model checkpoints
+checkpoints/*.pt
+checkpoints/*.pth
+checkpoints/*.bin
+
+# Raw/intermediate datasets
+data/raw/
+data/interim/
+
+# Generated JSONL datasets
+data/processed/**/*.jsonl
+
+# Environment/secrets
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+
+# Generated processed datasets
+data/processed/bug_classifier_splits/
+data/processed/historical_bug_classifier_splits/
+data/processed/bug_fix_dataset.json
+data/processed/change_classifier_dataset.json
+data/processed/change_classifier_with_history.json
+data/processed/diff_history.json
+data/processed/file_change_history.json
+data/processed/git_history.json
+data/processed/repository_dataset.json
