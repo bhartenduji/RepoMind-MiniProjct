@@ -54,6 +54,7 @@ class HybridTransformerBugClassifier(nn.Module):
         self.encoder = nn.TransformerEncoder(
             encoder_layer,
             num_layers=num_layers,
+            enable_nested_tensor=False,
         )
 
         # =====================================================
