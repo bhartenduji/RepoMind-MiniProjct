@@ -444,9 +444,11 @@ def predict(record, model, tokenizer, checkpoint):
         dtype=torch.long,
     )
 
-    numeric_features = torch.tensor(
-        [numeric],
-        dtype=torch.float32,
+    numeric_features = torch.from_numpy(
+        np.asarray(
+            [numeric],
+            dtype=np.float32,
+        )
     )
 
     with torch.no_grad():
