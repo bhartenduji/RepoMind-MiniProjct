@@ -22,6 +22,7 @@ TEST_PATH = (
 )
 
 BATCH_SIZE = 16
+BUG_FIX_THRESHOLD = 0.51
 
 
 def get_numeric_features(record):
@@ -329,10 +330,14 @@ def main():
                 numeric_features=numeric_features,
             )
 
-            predictions = torch.argmax(
+            probabilities = torch.softmax(
                 logits,
                 dim=1,
-            ).cpu().numpy()
+            )[:, 1]
+
+            predictions = (
+                probabilities >= BUG_FIX_THRESHOLD
+            ).long().cpu().numpy()
 
         for actual, predicted in zip(
             labels,

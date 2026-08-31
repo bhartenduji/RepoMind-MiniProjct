@@ -20,7 +20,7 @@ TOKENIZER_PATH = (
     "data/processed/"
     "code_tokenizer/tokenizer.json"
 )
-BUG_FIX_THRESHOLD = 0.31
+BUG_FIX_THRESHOLD = 0.51
 
 
 def get_numeric_features(record):
